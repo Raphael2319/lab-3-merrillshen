@@ -22,5 +22,6 @@ void main(void) {
     TRISHbits.TRISH3=0; //set TRIS value for pin (output)
     
     while (1) {
+        Sleep();
     }
 }
