@@ -26,6 +26,9 @@ void main(void) {
     TRISHbits.TRISH3=0; //set TRIS value for pin (output)
     
     while (1) {
-        LEDarray_disp_bin(TMR0L);        
+        //LEDarray_disp_bin(TMR0L);
+        unsigned int z = get16bitTMR0val();
+        z = z >> 8;
+        LEDarray_disp_bin(z);
     }
 }
