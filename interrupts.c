@@ -28,6 +28,8 @@ void __interrupt(high_priority) HighISR()
     
     if (PIR0bits.TMR0IF == 1){ 
         LATHbits.LATH3 = !LATHbits.LATH3; //toggle LED
+        TMR0H=0b00001011;
+        TMR0L=0b11011011;
         PIR0bits.TMR0IF=0; //toggle off flag
     }
 }
