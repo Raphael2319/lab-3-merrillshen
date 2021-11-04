@@ -12,8 +12,8 @@ void Timer0_init(void)
     T0CON0bits.T016BIT=1;	// 16 bit mode	
 	
     // it's a good idea to initialise the timer registers so we know we are at 0
-    TMR0H=65535;  //write High reg first, update happens when low reg is written to
-    TMR0L=3035; // number of intervals needed 62500
+    TMR0H=0b00001011;  //write High reg first, update happens when low reg is written to
+    TMR0L=0b11011011; // number of intervals needed 62500, so start from 3035
     T0CON0bits.T0EN=1;	//start the timer
 }
 
